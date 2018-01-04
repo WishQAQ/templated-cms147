@@ -1,0 +1,3 @@
+INSERT INTO `dede_addevaluation` VALUES('65','22','','','127.0.0.1','浪琴海 ','吴先生','彩贝的设计师服务很到位哦，很不错的小伙子，家里弄完了还专门给我们拍照留恋，挺喜欢的。','<div style=\"text-align: center;\">\r\n	<img alt=\"\" src=\"/uploads/140630/1-140630134609161.jpg\" style=\"width: 250px; height: 375px;\" /><br />\r\n	<img alt=\"\" src=\"/uploads/140630/1-1406301346293H.jpg\" style=\"width: 562px; height: 375px;\" /></div>\r\n');
+INSERT INTO `dede_addevaluation` VALUES('139','22','','','127.0.0.1','','','','');
+INSERT INTO `dede_addevaluation` VALUES('140','22','','','127.0.0.1','','','','');

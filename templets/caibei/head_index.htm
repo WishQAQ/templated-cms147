@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:global.cfg_keywords/}"/>
+<meta name="description" content="{dede:global.cfg_description/}"/>
+<link rel="stylesheet" type="text/css" href="{dede:global.cfg_templets_skin/}/css/style.css" />
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/www.js"></script>
+</head>
+<body>
+<div class="Column-100 HeaderBg">
+	<div class="Column Header">
+    	<a href="{dede:global.cfg_basehost/}/" title="{dede:global.cfg_webname/}" class="Logo fl"><img src="{dede:global.cfg_templets_skin/}/images/logo.png" alt="{dede:global.cfg_webname/}" /></a>
+        <ul class="Nav">
+		<li class="current"><a href="{dede:global.cfg_basehost/}/" title="{dede:global.cfg_webname/}"><em>网站首页</em><i>HOME</i></a></li>
+		{dede:channel type="top" row="6" }
+		<li><a href="[field:typeurl/]" title="[field:typename/]"><em>[field:typename/]</em><i>[field:enname/]</i></a></li>
+		{/dede:channel}
+        </ul>
+    </div>
+</div>

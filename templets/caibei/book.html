@@ -1,0 +1,91 @@
+{dede:include filename="head.htm"/}
+<div class="topBg"></div><div class="Column">
+        <div class="tc topImg"><img src="{dede:global.cfg_templets_skin/}/images/630202586bbb9f5a.jpg" border="0" width="1000" alt="{dede:global.cfg_webname/}"></div>
+        <div class="Leader">
+    <em>当前位置：</em>{dede:field name='position'/}</div>
+</div><div class="Column">
+<div class="Column-L">
+	<div class="CateList fl">
+  <div class="ht fl"><span class="fheiti">装修工艺</span><i>PROJECT</i></div>
+  <ul class="fl">
+{dede:channel type='son' typeid='11' row='7'}
+			<li><a href="[field:typelink/]"  target="_blank">[field:typename/]</a></li>
+	    {/dede:channel}
+    </ul>
+</div>
+    <div class="hr10"></div>
+    <div class="pService lService fl">
+<a href="{dede:type typeid='24'}[field:typelink/]{/dede:type}" title="在线订单" target="_blank" class="icon indent"><span class="s1"></span><span class="s2"></span>在线订单</a>
+<a href="{dede:type typeid='62'}[field:typelink/]{/dede:type}" title="工地参观" target="_blank" class="icon visit"><span class="s1"></span><span class="s2"></span>工地参观</a>
+</div></div>
+
+<div class="Column-R">
+ <div class="bTitle"><div class="fheiti">{dede:field name='typename'/}</div></div>
+    <div class="post_tips fyahei"><span class="orange fb">温馨提示 : </span><br />感谢您填写在线报名参观信息。为了我们能及时与您取得联系，信息填写后，请保证您的电话处于正常开机状态，我们会有专员第一时间和您取得联系。若您还有疑问，您可以致电<span class="otaho fb">客服电话：{dede:global.cfg_biaodantel/}</span>，我们将会有最专业的客服为您解答疑虑。</div>
+    <div class="post_book"> 
+	<form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+<input name="action" value="post" type="hidden"/>
+<input name="diyid" value="5" type="hidden"/>
+<input name="do" value="2" type="hidden"/>
+<div class='table ext cls_houses'><div class='left'><span class='red'>*</span> 项目名称：</div><div class='right'><div><table cellpadding="0" cellspacing="0"><tbody><tr><input name="houses" id="houses" value="" type="text"><td id="_opt_parent_houses"></td><td><span id="houses_tmp_show" class="stips"></span></td><td class="clue_on">&nbsp;请选择工地编号</td></tr></tbody></table></div></div><div class='clear'></div></div>	    <div class='table ext cls_contact'><div class='left'><span class='red'>*</span> 业主姓名：</div><div class='right'><div><table cellpadding='0' cellspacing='0'><tr><td><input type='text' class='input-text' name='contact' id='contact'  value='' style='width:100px;'></td><td class='clue_on'>&nbsp;请填写您的姓名</td></tr></table></div></div><div class='clear'></div></div>	    <div class='table ext cls_sex'><div class='left'><span class='red'>*</span> 业主性别：</div><div class='right'><div><table cellpadding='0' cellspacing='0'><tr><td><select name='sex' id='sex'><option value='男' selected>男</option><option value='女'>女</option></select></td></tr></table></div></div><div class='clear'></div></div>	    <div class='table ext cls_phone'><div class='left'><span class='red'>*</span> 联系电话：</div><div class='right'><div><table cellpadding='0' cellspacing='0'><tr><td><input type='text' class='input-text' name='phone' id='phone'  value='' style='width:150px;'></td><td class='clue_on'>&nbsp;请您填写手机号码，以方便我们和您取得联系</td></tr></table></div></div><div class='clear'></div></div>	    <div class='table ext cls_content'><div class='left'>预约留言：</div><div class='right'><div><table cellpadding='0' cellspacing='0'><tr><td><textarea class='input-text' style='width:400px;height:80px' name='content' id='content'></textarea></td></tr></table></div></div><div class='clear'></div></div>		<div class="table">
+	<div class="left"><span class="red">*</span> 验证码：</div>
+	<div class="right">
+		<input name="sys_check" id="sys_check" type="text" class="input-text" style="width:50px;" /><img id="vdimgck" align="absmiddle" onClick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="../include/vdimgck.php"/>	
+	</div>
+</div>
+	<div class="table">
+		<div class="left">&nbsp;</div>
+		<div class="right"><input type="submit" class="button" id="_phpok_submit" value="确定"/></div>
+	</div>
+<input name="dede_fields" value="houses,select;contact,text;sex,select;phone,text;content,multitext" type="hidden"/>
+<input name="dede_fieldshash" value="1faf3663233b97c0226d07c8506fdd6f" type="hidden"/>
+
+</form>
+
+<script type="text/javascript">
+		phpjs_parent_bemod('','houses','11601');
+					
+function to_submit()
+{
+	var subject = getid("subject").value;
+	if(!subject)
+	{
+		alert("主题不允许为空");
+		getid("subject").focus();
+		return false;
+	}
+						var houses = getid("houses").value;
+				if(!houses)
+		{
+			alert("请选择项目名称");
+			return false;
+		}
+							var contact = getid("contact").value;
+				if(!contact)
+		{
+			alert("请填写您的姓名");
+			return false;
+		}
+							var sex = getid("sex").value;
+				if(!sex)
+		{
+			alert("请选择性别");
+			return false;
+		}
+							var phone = getid("phone").value;
+				if(!phone)
+		{
+			alert("手机号码未填写或填写错误");
+			return false;
+		}
+					getid("_phpok_submit").disabled = true;
+	return true;
+}
+</script> 
+    </div><!--//post_book--> 
+</div>
+</div><!--//Column End-->
+
+{dede:include filename="footer.htm"/}
+</body>
+</html>

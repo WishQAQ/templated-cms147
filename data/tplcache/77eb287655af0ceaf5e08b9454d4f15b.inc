@@ -1,0 +1,1 @@
+<a href="[field:typelink /]" title="样板工程"  class="imga"><img src="{dede:global.cfg_templets_skin/}/images/1373ab8ab2ef8bc1.jpg" alt="样板工程" border=0/></a>

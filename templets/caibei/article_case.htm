@@ -1,0 +1,257 @@
+{dede:include filename="head.htm"/}
+<div class="topBg"></div><div class="Column">
+        <div class="tc topImg"><img src="{dede:global.cfg_templets_skin/}/images/b609e7feda606bad.jpg" border="0" width="1000" alt="{dede:global.cfg_webname/}"></div>
+        <div class="Leader">
+    <em>当前位置：</em>{dede:field name='position'/}{dede:field.title/}</div>
+</div><div class="Column">
+<div class="Column-L">
+    <div class="CateList fl">
+      <div class="ht fl"><span class="fheiti">本案设计师</span><i>DESIGNER</i></div>
+    </div>
+		<!--s-->
+	{dede:sql sql="SELECT * FROM dede_adddesigner LEFT JOIN dede_archives ON dede_adddesigner.aid = dede_archives.id where dede_adddesigner.dsnname = ~dsnname~"}
+	<ul class="moreTeam2 fl">
+		<li class="">
+            <a href="/plus/view.php?aid=[field:aid/]" target="_blank" class="imga"><img src="[field:photo/]" alt="[field:dsnname/]"></a>
+            <div class="info">
+                <a href="/plus/view.php?aid=[field:aid/]" title="[field:dsnname/]" target="_blank" class="fyahei">[field:dsnname/]</a>
+                <p class="position">[[field:job/]]</p>
+                <p>工作经验：[field:experience/]</p>
+				<p>收费标准：[field:collectfees/]</p>
+				<p>人气指数：[field:click/]</p>
+				<p>设计理念：[field:designconcept/]</p>
+			</div>
+        </li>
+    </ul>
+	{/dede:sql}
+		<div class="rArea2 fl">
+		<script type='text/javascript' language="javascript">
+			var designer='{dede:field.dsnname/}';
+			var cmsurl='{dede:global.cfg_basehost/}';
+			designer = escape(designer);
+			document.write('<a href="'+cmsurl+'/plus/list.php?tid=24&designer='+designer+'" title="立即预约这位设计师" target="_blank" class="trust">');
+		</script><span class="orange"><script src="{dede:field name='phpurl'/}/countapply.php?designer={dede:field name='dsnname'/}" type='text/javascript' language="javascript"></script></span></a>
+        </div>
+	<!--e-->
+
+        <div class="pTop pCTop">
+    <div class="ht fl">案例排行榜</div>
+    <ul class="fl">
+     
+	    {dede:arclist row='10' titlelen='24' orderby='pubdate' typeid='32' currentstyle="<li class='hover'><a href='~typelink~' ~rel~><span>~typename~</span></a></li>"}
+			     <li>
+            <em class="otaho fr">[field:click/]&nbsp;&nbsp;</em>
+            <a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="dis fl"><i class="otaho">[field:autoindex runphp='yes']@me=$GLOBALS['autoindex'];[/field:autoindex]</i>[field:title/]</a>
+            <a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="imga"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+        </li>
+		{/dede:arclist}
+
+                </ul>
+</div></div>
+
+<div class="Column-R">
+	<div class="bTitle">
+		    	<div class="msgPN">
+             
+        	<a class="prev">{dede:prenext get='pre'/}</a><br/>
+			<a class="next">{dede:prenext get='next'/}</a>
+             
+             
+        </div>
+		        <h1 class="fheiti">{dede:field.title/}</h1>
+    </div>
+    <div class="msgInfo">
+        <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare fr"><span class="fl">分享到&nbsp;</span><a class="bds_tsina"></a><a class="bds_sqq"></a><a class="bds_qzone"></a><a class="bds_tqq"></a><a class="bds_renren"></a><span class="bds_more">更多</span></div>
+        <em>时间：{dede:field.pubdate function="MyDate('Y-m-d',@me)"/}</em>
+        <em>访问：<script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script>次</em>
+    </div>
+
+    <div class="ad-gallery fl">
+      <div class="ad-image-wrapper"></div>
+      <div class="ad-nav">
+        <div class="ad-thumbs">
+          <ul class="ad-thumb-list">
+		  {dede:sql sql="select * from dede_uploads where arcid = ~id~"}
+               <li><a href="[field:url/]" title=""><img src="[field:url/]" width="80" height="60" /></a></li>       
+		  {/dede:sql}
+           </ul>
+        </div>
+        <!--//ad-thumbs--> 
+                <div class="prevCases"> 
+           
+          <a class="prev">{dede:prenext get='pre'/}</a><br/>
+           
+        </div>
+        <div class="nextCases"> 
+           
+          <a class="next">{dede:prenext get='next'/}</a>
+           
+        </div>
+         
+      </div>
+      <!--//ad-nav--> 
+    </div><!--//ad-gallery-->
+
+    <div class="ifLike fl">
+    	<span class="fyahei">如果你喜欢这样的风格,你可以</span>
+		<script type='text/javascript' language="javascript">
+			var designer='{dede:field.dsnname/}';
+			designer = escape(designer);
+			var cmsurl='{dede:global.cfg_basehost/}';
+			document.write('<a href="'+cmsurl+'plus/list.php?tid=24&designer='+designer+'" title="立即预约这位设计师" target="_blank" class="team_btn order">立即预约</a>');
+		</script>
+		<a href="{dede:type typeid='25'}[field:typelink/]{/dede:type}" title="立即咨询" target="_blank" class="team_btn book">立即咨询</a>
+    </div>
+    
+    <div class="pTitle"><em>案例信息</em><i>information</i></div>
+	<div class="casesInfo fl">
+		                                <p class="fl">室内面积：{dede:field.dsmeasure /}</p>        <p class="fl">本案人气：{dede:field.click/}</p>
+        <p class="fl">上传时间：{dede:field.pubdate function="MyDate('Y-m-d',@me)"/}</p>
+	</div>
+    <div class="hr10"></div>
+        <div class="casesNote fl">
+    	<div class="tt">设计说明</div>
+        <pre class="pre">{dede:field.dsexplain/}</pre>
+    </div>
+    
+    <div class="hr20"></div>
+    <div class="CasesImg tc">
+          {dede:field.body/}
+        </div>
+    <div class="hr20"></div>
+            <div class="pTitle" style="margin-bottom:0;"><em style="width:215px;padding-right:30px;background:#666 url({dede:global.cfg_templets_skin/}/images/index.gif) -110px -360px no-repeat;">浏览了此案例的人还浏览了</em></div>
+    <ul class="pCases CasesList" style="margin-bottom:20px;">
+	{dede:arclist row='3' titlelen='24' orderby='pubdate' typeid='32'}
+			    <li id=[field:global name=autoindex function="@me%3==0?@me='end':@me=''"/]>
+            <a href="[field:arcurl/]" title="[field:title/]" class="imga"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+            <div class="txt">
+                <a href="[field:arcurl/]" title="[field:title/]" class="tt dis">[field:title/]</a>
+                <em class="fari fr">[field:click/]</em>
+                             </div>
+            <div class="date fari">
+                <a href="[field:arcurl/]" title="[field:title/]" class="dis f99">+ READ MORE</a>
+                <em class="fr">[field:click/]</em>
+                <em>DATE:[field:pubdate function="MyDate('Y-m-d',@me)"/]</em>
+            </div>
+        </li>
+			{/dede:arclist}
+    
+            </ul>
+    		<div class="Column-100 tc"><div style="text-align:center;"><img src="{dede:global.cfg_templets_skin/}/images/e39ca1d71d9f8e46.jpg" border="0" /></div></div>
+    <div class="hr20"></div>
+	<div class="pTitle"><em>案例评论</em><i>Commentary</i></div>
+    <!--客户评论表单-->
+	<!--
+<script type="text/javascript">
+$(document).ready(function(){
+    //input background
+	//$(".table input[type='text'],.table textarea").focus(function(){$(this).css({'border':'1px solid #C1AB70'})})
+	//							  .blur(function(){$(this).css({'border':'1px solid #181818'})});
+	
+	//getreplylist
+	$.get("?c=reply&id=49&ajax=1", function(data){
+		$(".replylistBox").html(data);
+	});
+	
+	//replysave
+	$("#_reply_submit_").click(function(){
+		if(!$("#username").val()){
+			alert("请输入您的称呼");
+			$("#username").focus();
+			return false;
+		}
+				if(!$("#content").val()){
+			alert("请输入点评内容");
+			$("#content").focus();
+			return false;
+		}
+		
+		$.post($("#ReplyForm").attr("action"), $("#ReplyForm").serialize(),function(data){
+   			if(data=='success'){//success
+				$(".ajaxtips").html('<font color="#C8A048">评论发布成功！我们客服审核后才显示！</font>');
+				$("#content").val('');
+				$("#sys_check").val('')
+				$.get("?c=reply&id=49&ajax=1", function(data){
+					$(".replylistBox").html(data);
+				});
+			}else{
+				$(".ajaxtips").html('<font color="red">'+data+'</font>');
+			}
+			$("#imgcode").attr("src",get_url("login,codes")+'rand='+Math.random());
+ 		});
+		
+		return false;
+	});
+
+
+	//pagelist
+	$(".pagelist a").live("click", function(){
+	    var url=$(this).attr("href");
+		$.get(url+"&ajax=1", function(data){
+			$(".replylistBox").html(data);
+		});
+		return false;
+	})
+});
+</script>-->
+<div class="ReplyBox" id="ReplyStart">
+  <div class="ReplyInput">
+  <form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+<input name="action" value="post" type="hidden"/>
+<input name="diyid" value="6" type="hidden"/>
+<input name="do" value="2" type="hidden"/>
+    <div class="table" style="width:40%;float:left;">
+        <div class="left">您的姓名：</div>
+        <div class="right"><input name="username" id="username" type="text" class="input-text" style="width:168px;" value=""/></div>
+    </div>
+	    <div class="table" style="width:60%;">
+        <div class="left">您的手机：</div>
+        <div class="right"><input name="contact" id="contact" type="text" class="input-text" style="width:168px;" value="(*我们将与您电话联系)" onfocus="if (value =='(*我们将与您电话联系)'){value =''}" onblur="if (value ==''){value='(*我们将与您电话联系)'}"/></div>
+    </div>
+	    <div class="table">
+        <div class="left">您想说的：</div>
+        <div class="right"><textarea id="content" name="content" style="width: 460px; height: 80px;" class="input-text"></textarea></div>
+    </div>
+        <div class="table">
+        <div class="left" style="line-height:30px;">验证码：</div>
+        <div class="right">
+            <input name="sys_check" id="sys_check" type="text" class="input-text" style="width:50px;" /><img id="vdimgck" align="absmiddle" onClick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="{dede:global.cfg_basehost/}/include/vdimgck.php"/>
+            <input type="submit" class="button" id="_reply_submit_" value=" 提 交 "/>
+            <span class="ajaxtips"></span>
+        </div>
+    </div>
+<input name="dede_fields" value="username,text;contact,text;content,multitext" type="hidden"/>
+<input name="dede_fieldshash" value="6d7ebada1f185b099aacf49932a380b9" type="hidden"/>
+
+</form>
+
+  </div>
+  <div class="ReplyList">
+    <!--<div class="replylistBox"><div class="loading">Loading...</div></div>-->
+  </div>
+  
+</div></div>
+</div><!--//Column End-->
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/ad-gallery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	//案例图滚动
+	var galleries = $('.ad-gallery').adGallery({loader_image: 'images/loader.gif',animation_speed:500,effect: 'fade',slideshow: {autostart: true,speed: 3000,start_label: '播放',stop_label: '停止'} });
+	var height1 = $('.ad-image-wrapper').height();
+	var width1 = $('.ad-image-wrapper').width();
+	$("<img />").attr({
+		//src: 'images/bigshow.gif'
+	}).css({
+		position: "absolute",
+		zIndex: 99,
+		width: width1,
+		height: height1
+	}).appendTo('.ad-image-wrapper')
+});
+</script>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1384883" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+{dede:include filename="footer.htm"/}

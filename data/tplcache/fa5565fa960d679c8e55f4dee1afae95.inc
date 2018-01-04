@@ -1,0 +1,1 @@
+<a href="[field:typelink /]" target="_blank">更多最新活动</a>

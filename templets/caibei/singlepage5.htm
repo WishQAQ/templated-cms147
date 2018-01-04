@@ -1,0 +1,80 @@
+{dede:include filename="head.htm"/}
+<div class="topBg"></div><div class="Column">
+        <div class="tc topImg"><img src="{dede:global.cfg_templets_skin/}/images/630202586bbb9f5a.jpg" border="0" width="1000" alt="{dede:global.cfg_webname/}"></div>
+        <div class="Leader">
+    <em>当前位置：</em>{dede:field name='position'/}</div>
+</div><div class="Column">
+<div class="Column-L">
+	<div class="CateList fl">
+  <div class="ht fl"><span class="fheiti">品质服务</span><i>SERVICE</i></div>
+  <ul class="fl">
+{dede:channel type='son' typeid='19' row='7'}
+			<li><a href="[field:typelink/]"  target="_blank">[field:typename/]</a></li>
+	    {/dede:channel}
+    </ul>
+</div>
+    <div class="hr10"></div>
+    <div class="pService lService fl">
+<a href="{dede:type typeid='24'}[field:typelink/]{/dede:type}" title="在线订单" target="_blank" class="icon indent"><span class="s1"></span><span class="s2"></span>在线订单</a>
+<a href="{dede:type typeid='62'}[field:typelink/]{/dede:type}" title="工地参观" target="_blank" class="icon visit"><span class="s1"></span><span class="s2"></span>工地参观</a>
+</div></div>
+
+<div class="Column-R">
+	<div class="bTitle"><h1 class="fheiti">在线咨询</h1></div>
+    <div class="post_tips fyahei"><span class="orange fb">温馨提示 : </span><br />感谢您填写装修咨询。为了我们能及时与您取得联系,信息填写后，请保证您的电话处于正常开机状态，我们会有专员第一时间和您取得联系。若您还有疑问，您可以致电<span class="otaho fb">客服电话：{dede:global.cfg_biaodantel/}</span>，我们将会有最专业的客服为您解答疑虑。</div>
+    <div class="post_book"> 
+	<form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+<input name="action" value="post" type="hidden"/>
+<input name="diyid" value="3" type="hidden"/>
+<input name="do" value="2" type="hidden"/>
+	    <div class='table ext cls_contact'><div class='left'><span class='red'>*</span> 联系人：</div><div class='right'><div><table cellpadding='0' cellspacing='0'><tr><td><input type='text' class='input-text' name='contact' id='contact'  value='' style='width:200px;'></td><td class='clue_on'>&nbsp;请输入您的称呼</td></tr></table></div></div><div class='clear'></div></div>	    <div class='table ext cls_phone'><div class='left'><span class='red'>*</span> 联系手机：</div><div class='right'><div><table cellpadding='0' cellspacing='0'><tr><td><input type='text' class='input-text' name='phone' id='phone'  value='' style='width:200px;'></td><td class='clue_on'>&nbsp;请输入您的联系手机</td></tr></table></div></div><div class='clear'></div></div>	    <div class='table ext cls_content'><div class='left'><span class='red'>*</span> 留言内容：</div><div class='right'><div><table cellpadding='0' cellspacing='0'><tr><td><textarea class='input-text' style='width:350px;height:80px' name='content' id='content'></textarea></td></tr></table></div></div><div class='clear'></div></div>		<div class="table">
+	<div class="left"><span class="red">*</span> 验证码：</div>
+	<div class="right">
+		<input name="sys_check" id="sys_check" type="text" class="input-text" style="width:50px;" /><img id="vdimgck" align="absmiddle" onClick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="../include/vdimgck.php"/>	
+	</div>
+</div>
+	<div class="table">
+		<div class="left">&nbsp;</div>
+		<div class="right"><input type="submit" class="button" id="_phpok_submit" value="确定"></div>
+	</div>
+<input name="dede_fields" value="contact,text;phone,text;content,multitext" type="hidden"/>
+<input name="dede_fieldshash" value="5078e072bae596087c9e438e66c12778" type="hidden"/>
+
+</form>
+<script type="text/javascript">
+			
+function to_submit()
+{
+	var subject = getid("subject").value;
+	if(!subject)
+	{
+		alert("主题不允许为空");
+		getid("subject").focus();
+		return false;
+	}
+						var contact = getid("contact").value;
+				if(!contact)
+		{
+			alert("请填写联系人");
+			return false;
+		}
+							var phone = getid("phone").value;
+				if(!phone)
+		{
+			alert("手机号码未填写或填写错误");
+			return false;
+		}
+							var content = getid("content").value;
+				if(!content)
+		{
+			alert("请输入留言内容");
+			return false;
+		}
+			getid("_phpok_submit").disabled = true;
+	return true;
+}
+</script> 
+    </div><!--//post_book--> 
+</div>
+</div><!--//Column End-->
+{dede:include filename="footer.htm"/}

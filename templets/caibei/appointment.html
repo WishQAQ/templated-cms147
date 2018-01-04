@@ -1,0 +1,167 @@
+{dede:include filename="head.htm"/}
+<div class="topBg"></div><div class="Column">
+        <div class="tc topImg"><img src="{dede:global.cfg_templets_skin/}/images/630202586bbb9f5a.jpg" border="0" width="1000" alt="{dede:global.cfg_webname/}"></div>
+        <div class="Leader">
+    <em>当前位置：</em>{dede:field name='position'/}</div>
+</div><div class="Column">
+<div class="Column-L">
+	<div class="CateList fl">
+  <div class="ht fl"><span class="fheiti">品质服务</span><i>SERVICE</i></div>
+  <ul class="fl">
+{dede:channel type='son' typeid='19' row='7'}
+			<li><a href="[field:typelink/]"  target="_blank">[field:typename/]</a></li>
+	    {/dede:channel}
+    </ul>
+</div>
+    <div class="hr10"></div>
+    <div class="pService lService fl">
+<a href="{dede:type typeid='24'}[field:typelink/]{/dede:type}" title="在线订单" target="_blank" class="icon indent"><span class="s1"></span><span class="s2"></span>在线订单</a>
+<a href="{dede:type typeid='62'}[field:typelink/]{/dede:type}" title="工地参观" target="_blank" class="icon visit"><span class="s1"></span><span class="s2"></span>工地参观</a>
+</div></div>
+
+<div class="Column-R">
+ <div class="bTitle"><div class="fheiti">{dede:field name='typename'/}</div></div>
+
+
+    <div class="post_tips fyahei"><span class="orange fb">温馨提示 : </span><br />感谢您填写真实的装修信息。为了我们能及时与您取得联系，信息填写后，请保证您的电话处于正常开机状态，我们会有专员第一时间和您取得联系。若您还有疑问，您可以致电<span class="otaho fb">客服电话：{dede:global.cfg_biaodantel/} </span>，我们将会有最专业的客服为您解答疑虑。</div>
+    <div class="post_book"> 
+	<form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+<input name="action" value="post" type="hidden"/>
+<input name="diyid" value="2" type="hidden"/>
+<input name="do" value="2" type="hidden"/>
+	    <div class='table ext cls_contact'>
+		<div class='left'><span class='red'>*</span> 业主姓名：</div>
+		<div class='right'>
+		<div><table cellpadding='0' cellspacing='0'><tr><td><input type='text' class='input-text' name='contact' id='contact'  value='' style='width:100px;'/></td><td class='clue_on'>&nbsp;请填写您的姓名</td></tr></table></div>
+		</div>
+		<div class='clear'></div>
+		</div>	    
+		<div class='table ext cls_sex'>
+		<div class='left'><span class='red'>*</span> 业主性别：</div>
+		<div class='right'>
+		<div><table cellpadding='0' cellspacing='0'><tr><td><table cellpadding='0' cellspacing='0'><tr><td><input type='radio' name='sex' value='男' checked> 男 &nbsp; </td><td><input type='radio' name='sex' value='女'> 女 &nbsp; </td></tr></table></td></tr></table></div>
+		</div>
+		<div class='clear'></div>
+		</div>
+	    <div class='table ext cls_phone'><div class='left'><span class='red'>*</span> 联系手机：</div><div class='right'><div><table cellpadding='0' cellspacing='0'><tr><td><input type='text' class='input-text' name='phone' id='phone'  value='' style='width:150px;'></td><td class='clue_on'>&nbsp;请您填写手机号码，我们会保护您的隐私</td></tr></table></div></div><div class='clear'></div></div>
+	    <div class='table ext cls_addr'><div class='left'>楼盘地址：</div><div class='right'><div><table cellpadding='0' cellspacing='0'><tr><td><input type='text' class='input-text' name='addr' id='addr'  value='' style='width:350px;'></td><td class='clue_on'>&nbsp;填写详细楼盘或地址</td></tr></table></div></div><div class='clear'></div></div>	
+		<div class='table ext cls_area'><div class='left'>使用面积：</div><div class='right'><div><table cellpadding='0' cellspacing='0'><tr><td><input type='text' class='input-text' name='area' id='area'  value='' style='width:100px;'></td><td class='clue_on'>&nbsp;平方米</td></tr></table></div></div><div class='clear'></div></div>
+	    <div class='table ext cls_cost'><div class='left'>装修预算：</div><div class='right'><div><table cellpadding='0' cellspacing='0'><tr><td><input type='text' class='input-text' name='cost' id='cost'  value='' style='width:100px;'></td><td class='clue_on'>&nbsp;万元</td></tr></table></div></div><div class='clear'></div></div>
+	    <div class='table ext cls_unit'>
+		<div class='left'>您的户型：</div>
+		<div class='right'><div><table cellpadding="0" cellspacing="0"><tbody><tr><td id="_opt_parent_unit">
+			<select name='unit'>
+				<option value="未选择">请选择…</option>
+				<option value="一居">一居</option>
+				<option value="两居">两居</option>
+				<option value="多居">多居</option>
+				<option value="办公空间">办公空间</option>
+				<option value="娱乐会所">娱乐会所</option>
+				<option value="大户型">大户型</option>
+				<option value="复式">复式</option>
+				<option value="别墅">别墅</option>
+				<option value="其他">其他</option>
+			</select>
+		</td><td id="_opt_son_unit" style="padding-left:3px;"></td></tr></tbody></table></div></div>
+		<div class='clear'></div></div>
+	    <div class='table ext cls_dstyle'><div class='left'>装修风格：</div>
+		<div class='right'><div><table cellpadding="0" cellspacing="0"><tbody><tr><td id="_opt_parent_dstyle">
+		<select name="dstyle">
+			<option value="未选择">请选择…</option>
+			<option value="别墅复式">别墅复式</option>
+			<option value="欧式风格">欧式风格</option>
+			<option value="美式风格">美式风格</option>
+			<option value="中式风格">中式风格</option>
+			<option value="现代风格">现代风格</option>
+			</select></td><td id="_opt_son_dstyle" style="padding-left:3px;"></td></tr></tbody></table></div></div><div class='clear'></div></div>
+	    <div class='table ext cls_designer'><div class='left'>预约设计师：</div>
+		<div class='right'><div><table cellpadding="0" cellspacing="0"><tbody>
+		<tr><td id="_opt_parent_designer">
+			<select name="designer" id="designer">
+				<option value="未选择">请选择…</option>
+				<option value="刘全望">刘全望</option>
+				<option value="陈工">陈工</option>
+				<option value="赵静">赵静</option>
+				<option value="小梅">小梅</option>
+
+			</select>
+		</td><td id="_opt_son_designer" style="padding-left:3px;"></td></tr></tbody></table></div></div>
+		<div class='clear'></div></div>	
+	    <div class='table ext cls_content'><div class='left'>装修要求：</div><div class='right'><div><table cellpadding='0' cellspacing='0'><tr><td><textarea class='input-text' style='width:350px;height:80px' name='content' id='content'></textarea></td></tr></table></div></div><div class='clear'></div></div>
+	    <div class='table ext cls_dtime'><div class='left'>动工时间：</div><div class='right'><div><table cellpadding='0' cellspacing='0'><tr><td><input type='text' class='input-text' name='dtime' id='dtime'  value='' style='width:150px;'></td><td class='clue_on'>&nbsp;请输入预计动工时间</td></tr></table></div></div><div class='clear'></div></div>
+		<div class="table">
+	<div class="left"><span class="red">*</span> 验证码：</div>
+	<div class="right">
+		<input name="sys_check" id="sys_check" type="text" class="input-text" style="width:50px;" /><img id="vdimgck" align="absmiddle" onClick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="../include/vdimgck.php"/>	
+	</div>
+</div>
+	<div class="table">
+		<div class="left">&nbsp;</div>
+		<div class="right"><input type="submit" class="button" id="_phpok_submit" value="确定"/></div>
+	</div>
+	<input type="hidden" name="dede_fields" value="contact,text;sex,radio;phone,text;area,text;cost,text;unit,select;dstyle,select;designer,text;content,multitext;dtime,text;addr,text" />
+<input type="hidden" name="dede_fieldshash" value="247440c74028a38cdcd47ce5ffbc2e0d" /></table>
+</form>
+<script type="text/javascript">
+function GetQueryString(name) {
+   var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)","i");
+   var r = window.location.search.substr(1).match(reg);
+   if (r!=null) return (r[2]); return null;
+}
+
+function setSelectOption(objId, targetValue){
+  var obj = document.getElementById(objId);
+  if(obj){
+    var options = obj.options;
+    if(options){
+      var len = options.length;
+      for(var i=0;i<len;i++){
+        if(options[i].value == targetValue){
+          options[i].defaultSelected = true;
+          options[i].selected = true;
+          return true;
+        }
+      }
+    } else {
+      alert('missing element(s)!');
+    }
+  } else {
+    alert('missing element(s)!');
+  }
+}
+
+//调用方法：
+setSelectOption('designer',unescape(GetQueryString("designer")));//设置默认值
+
+function to_submit()
+{
+	var subject = getid("subject").value;
+	if(!subject)
+	{
+		alert("主题不允许为空");
+		getid("subject").focus();
+		return false;
+	}
+						var contact = getid("contact").value;
+				if(!contact)
+		{
+			alert("请填写您的姓名");
+			return false;
+		}
+									var phone = getid("phone").value;
+				if(!phone)
+		{
+			alert("手机号码未填写或填写错误");
+			return false;
+		}
+		getid("_phpok_submit").disabled = true;
+	return true;
+}
+</script> 
+    </div><!--//post_book--> 
+
+    </div>
+</div><!--//Column End-->
+{dede:include filename="footer.htm"/}
+</body>
+</html>

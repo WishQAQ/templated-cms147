@@ -1,0 +1,360 @@
+{dede:include filename="head_index.htm"/}
+<div class="topBg"></div>
+<div class="Column iPlayer" id="iPlayer">
+  <div class="ImgBox" id="ImgBox">
+  
+	{dede:myppt typeid='1'}
+		<a href="[field:url/]" title="[field:title/]" target="_blank"><img src="[field:pic/]" alt="[field:title/]" /></a>
+		{/dede:myppt}
+    </div>
+  <div class="LenBox" id="LenBox">
+  {dede:myppt typeid='1'}
+    <a href="javascript:void(0)"></a>
+	{/dede:myppt}
+	</div>
+  <a class="btn" id="prev" href="javascript:void(0)"></a>
+  <a class="btn" id="next" href="javascript:void(0)"></a>
+</div>
+<div class="iLineBg"></div>
+<div class="iWrap">
+    <div class="pService iService fl">
+    	<a href="{dede:type typeid='24'}[field:typelink/]{/dede:type}" title="在线订单" target="_blank" class="icon indent"><span class="s1"></span><span class="s2"></span>在线订单</a>
+    	<a href="{dede:type typeid='62'}[field:typelink/]{/dede:type}" title="工地参观" target="_blank" class="icon visit"><span class="s1"></span><span class="s2"></span>工地参观</a>
+    	<a href="{dede:type typeid='25'}[field:typelink/]{/dede:type}" title="在线咨询" target="_blank" class="icon book"><span class="s1"></span><span class="s2"></span>在线咨询</a>
+        <a href="{dede:type typeid='20'}[field:typelink/]{/dede:type}" title="服务流程" target="_blank" class="btn ser">服务流程</a>
+        <a href="{dede:type typeid='23'}[field:typelink/]{/dede:type}" title="常见问题" target="_blank" class="btn faq">常见问题</a>
+    </div>
+
+	<div class="iSpec fl">
+    	<div class="ht fl">{dede:type typeid='2'}<a href="[field:typelink /]" target="_blank">更多最新活动</a>{/dede:type}</div>
+		<div class="lArea fl">
+		{dede:arclist row='1' titlelen='40' infolen='30' flag = 'p' orderby='pubdate' typeid='27'}
+									<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="imga fl"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="tt fyahei">[field:title/]</a>
+<p>[field:infos/]</p>
+<p class="fari"><i>[field:pubdate function="MyDate('Y-m-d',@me)"/]</i><a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="more f99">Readmore</a></p>
+		{/dede:arclist}
+         </div>
+		 
+		<ul class="fl">
+		{dede:arclist row='4' titlelen='50' orderby='pubdate' typeid='2' currentstyle="<li class='hover'><a href='~typelink~' title='~typename~' target="_blank" class="dis">
+		  <em class="col_[field:autoindex runphp='yes']@me=$GLOBALS['autoindex'];[/field:autoindex]">[field:autoindex runphp='yes']@me=$GLOBALS['autoindex'];[/field:autoindex]</em>
+		  <div class="tt fyahei"><i>></i> ~typename~</div>
+		  <p class="fari">DATE:[field:pubdate function="MyDate('Y-m-d',@me) --+ +"/]              READ:[field:click/]</p>
+		  </a></li>"}
+		<!---->
+		
+		<!---->
+		<li>
+		  <a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="dis">
+		  <em class="col_[field:autoindex runphp='yes']@me=$GLOBALS['autoindex'];[/field:autoindex]">[field:autoindex runphp='yes']@me=$GLOBALS['autoindex'];[/field:autoindex]</em>
+		  <div class="tt fyahei"><i>></i> [field:title/]</div>
+		  <p class="fari">DATE:[field:pubdate function="MyDate('Y-m-d',@me)"/]              READ:[field:click/]</p>
+		  </a>
+		</li>
+		{/dede:arclist}
+       </ul>
+    </div>
+
+	<div class="iVideo fl">
+    	<div class="shadow fr"></div>
+        <div class="ht fl">企业视频</div>
+        <div class="ct fl" id="VideoPlay">
+		<img src="{dede:global.cfg_templets_skin/}/images/vedio.png">
+		</div>
+		
+  <script type="text/javascript">
+$(document).ready(function(){
+	var so = new SWFObject("http://player.youku.com/player.php/sid/XODMxMTI0MTcy/v.swf", "myflash", "330", "230", "9", "#000");
+	so.addParam("flashvars", "isAutoPlay=true&autoPlay=true");
+	so.addParam("allowFullScreen", "true");
+	so.addParam("wmode", "transparent");
+	so.write("VideoPlay");
+});
+</script> 
+</div>
+    <div class="hr20"></div>
+    <div class="pCases iCases">
+    	<div class="iBTitle">
+    		<h2>精选案例CASES</h2>
+            <div class="ht fyahei">
+			 {dede:channel type='son' row='6' typeid='3'}
+      	<a href="javascript:void(0);" rel="nofollow">[field:typename/]</a>
+      	{/dede:channel}
+            </div>
+    	</div>
+		<ul class="ct" style="display:block;">
+		{dede:arclist row='8' titlelen='24' addfields='dsnname' channelid='20' orderby='pubdate' typeid='8'}
+			<li  id=[field:global name=autoindex function="@me%4==0?@me='end':@me=''"/]>
+			<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="imga"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+			<div class="txt">
+				<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="tt dis">[field:title/]</a>
+				<em class="fari fr">[field:click/]</em>
+				<em>设计：[field:dsnname/]</em>
+					</div>
+			<div class="date fari">
+				<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="dis f99">+ READ MORE</a>
+			  <em class="fr">[field:click/]</em>
+				<em>DATE:[field:pubdate function="MyDate('Y-m-d',@me)"/]</em>
+			</div>
+			</li>
+			{/dede:arclist}
+		</ul>
+        <ul class="ct" style="display:none;">
+			{dede:arclist row='8' titlelen='24' addfields='dsnname' channelid='20' orderby='pubdate' typeid='4'}
+			<li  id=[field:global name=autoindex function="@me%4==0?@me='end':@me=''"/]>
+			<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="imga"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+			<div class="txt">
+				<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="tt dis">[field:title/]</a>
+				<em class="fari fr">[field:click/]</em>
+				<em>设计：[field:dsnname/]</em>
+					</div>
+			<div class="date fari">
+				<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="dis f99">+ READ MORE</a>
+			  <em class="fr">[field:click/]</em>
+				<em>DATE:[field:pubdate function="MyDate('Y-m-d',@me)"/]</em>
+			</div>
+			</li>
+			{/dede:arclist}
+        </ul>
+        <ul class="ct" style="display:none;">
+		{dede:arclist row='8' titlelen='24' addfields='dsnname' channelid='20' orderby='pubdate' typeid='5'}
+			<li  id=[field:global name=autoindex function="@me%4==0?@me='end':@me=''"/]>
+			<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="imga"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+			<div class="txt">
+				<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="tt dis">[field:title/]</a>
+				<em class="fari fr">[field:click/]</em>
+				<em>设计：[field:dsnname/]</em>
+					</div>
+			<div class="date fari">
+				<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="dis f99">+ READ MORE</a>
+			  <em class="fr">[field:click/]</em>
+				<em>DATE:[field:pubdate function="MyDate('Y-m-d',@me)"/]</em>
+			</div>
+			</li>
+			{/dede:arclist}
+        </ul>
+        <ul class="ct" style="display:none;">
+		{dede:arclist row='8' titlelen='24' addfields='dsnname' channelid='20' orderby='pubdate' typeid='6'}
+			<li  id=[field:global name=autoindex function="@me%4==0?@me='end':@me=''"/]>
+			<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="imga"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+			<div class="txt">
+				<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="tt dis">[field:title/]</a>
+				<em class="fari fr">[field:click/]</em>
+				<em>设计：[field:dsnname/]</em>
+					</div>
+			<div class="date fari">
+				<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="dis f99">+ READ MORE</a>
+			  <em class="fr">[field:click/]</em>
+				<em>DATE:[field:pubdate function="MyDate('Y-m-d',@me)"/]</em>
+			</div>
+			</li>
+			{/dede:arclist}
+        </ul>
+        <ul class="ct" style="display:none;">
+		{dede:arclist row='8' titlelen='24' addfields='dsnname' channelid='20' orderby='pubdate' typeid='7'}
+			<li  id=[field:global name=autoindex function="@me%4==0?@me='end':@me=''"/]>
+			<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="imga"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+			<div class="txt">
+				<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="tt dis">[field:title/]</a>
+				<em class="fari fr">[field:click/]</em>
+				<em>设计：[field:dsnname/]</em>
+					</div>
+			<div class="date fari">
+				<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="dis f99">+ READ MORE</a>
+			  <em class="fr">[field:click/]</em>
+				<em>DATE:[field:pubdate function="MyDate('Y-m-d',@me)"/]</em>
+			</div>
+			</li>
+			{/dede:arclist}
+
+</ul>
+
+        <ul class="ct" style="display:none;">
+		{dede:arclist row='8' titlelen='24' addfields='dsnname' channelid='20' orderby='pubdate' typeid='9'}
+			<li  id=[field:global name=autoindex function="@me%4==0?@me='end':@me=''"/]>
+			<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="imga"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+			<div class="txt">
+				<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="tt dis">[field:title/]</a>
+				<em class="fari fr">[field:click/]</em>
+				<em>设计：[field:dsnname/]</em>
+					</div>
+			<div class="date fari">
+				<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="dis f99">+ READ MORE</a>
+			  <em class="fr">[field:click/]</em>
+				<em>DATE:[field:pubdate function="MyDate('Y-m-d',@me)"/]</em>
+			</div>
+			</li>
+			{/dede:arclist}
+</ul>
+    </div>
+
+    <div class="iTeam fl">
+    	<div class="iBTitle">
+        	<h2>设计团队TEAM</h2>
+        </div>
+		<div id="gpic3" style="overflow:hidden; width:980px; height:200px;margin
+		:0px auto;">
+                      <table border="0" align="center" cellpadding="0" cellspacing="0">
+						 <tr>
+							<td id="gpic4" valign="top" align="center">
+								<table width="980"  border="0" align='center' cellpadding="0" cellspacing="0">
+									<tr>
+									{dede:arclist row='50' titlelen='24' orderby='pubdate' typeid='10'}
+									<td height="180" width="240" align="center" style="padding:0px 10px;"> <a href="[field:arcurl/]" target="_blank"><img height="180" width="240" src="[field:litpic/]"/><br/>[field:title/]</a></td> 
+									{/dede:arclist}						 
+									</tr>
+								</table>
+							  </td>
+							<td id="gpic5" valign="top"></td>
+						  </tr>
+                      </table>
+           </div> 
+		   <script>
+var speed=30
+gpic5.innerHTML=gpic4.innerHTML
+function Marquee(){
+if(gpic5.offsetWidth-gpic3.scrollLeft<=0)
+gpic3.scrollLeft-=gpic4.offsetWidth
+else{
+gpic3.scrollLeft++
+}
+}
+var MyMar=setInterval(Marquee,speed)
+gpic3.onmouseover=function() {clearInterval(MyMar)}
+gpic3.onmouseout=function() {MyMar=setInterval(Marquee,speed)}
+</script>
+    </div>
+	
+    <div class="hr20"></div>
+    
+	<div class="iProcess">
+    	<div class="iBTitle">
+        	<h2>工程工艺-PROJECT</h2>
+            <div class="ht">
+            	<div class="fr fyahei">
+				{dede:channel type='son' row='7' typeid='11'}
+				<a href="[field:typelink/]" target="_blank">[field:typename/]</a>
+				{/dede:channel}
+                                </div>
+            </div>
+        </div>
+        <div class="biaozhun fl">
+		<a href="{dede:type typeid='11'}[field:typelink/]{/dede:type}" title="样板工程"  class="imga"><img src="{dede:global.cfg_templets_skin/}/images/1373ab8ab2ef8bc1.jpg" alt="样板工程" border=0/></a>
+		</div>
+        <div class="iTujie fl">
+        	<div class="pTitle">
+            {dede:type typeid='13'}<a href="[field:typelink /]" target="_blank" class="iMore">MORE</a>{/dede:type}
+                <em>工艺图解</em><i>Process diagram</i>
+            </div>
+									
+			{dede:arclist row='4' infolen='80' titlelen='24' orderby='pubdate' typeid='13'}
+			<li><a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="dis">
+  <em class="col_[field:autoindex runphp='yes']@me=$GLOBALS['autoindex'];[/field:autoindex]">[field:autoindex runphp='yes']@me=$GLOBALS['autoindex'];[/field:autoindex]</em>
+    <p class="fb">[field:title/]</p>
+    <p>[field:infos/]</p>
+  </a></li>
+  {/dede:arclist}
+
+		</div>
+        <div class="iRes fl">
+        	<div class="pTitle">
+			{dede:type typeid='18'}<a href="[field:typelink /]" target="_blank"  class="iMore">MORE</a>{/dede:type}
+                <em>在建工地</em><i>In the construction site</i>
+            </div>
+            <ul>
+			{dede:arclist row='4' titlelen='40' orderby='pubdate' typeid='18'}
+						<li id=[field:global name=autoindex function="@me%2==0?@me='end':@me=''"/]>
+  <a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="imga"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+    <a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="dis f66">[field:title/]</a>
+ <!-- <em>进度：[field:process/]</em>--></li>
+			{/dede:arclist}
+</ul>
+        </div>
+	</div><!--//iProcess End-->
+	
+    <div class="hr20"></div>
+    
+    <div class="iIndent fl">
+	<form action="/plus/diy.php" enctype="multipart/form-data" method="post">
+<input name="action" value="post" type="hidden"/>
+<input name="diyid" value="1" type="hidden"/>
+<input name="do" value="2" type="hidden"/>
+<div class="table ext">
+		<input type="text" class="input-text" name="contact" id="contact" value="姓名" onfocus="if(value == '姓名'){value = ''}" onblur="if(value == ''){value = '姓名'}" />
+		<input type="text" class="input-text" name="addr" id="addr" value="地区" onfocus="if(value == '地区'){value = ''}" onblur="if(value == ''){value = '地区'}" />
+		<input type="text" class="input-text" name="cost" id="cost" value="预算" onfocus="if(value == '预算'){value = ''}" onblur="if(value == ''){value = '预算'}" />
+		<input type="text" class="input-text" name="area" id="area" value="面积" onfocus="if(value == '面积'){value = ''}" onblur="if(value == ''){value = '面积'}" />
+		<input type="text" class="input-text" name="dtime" id="dtime" value="装修时间" onfocus="if(value == '装修时间'){value = ''}" onblur="if(value == ''){value = '装修时间'}" />
+    </div>
+    <div class="table content">
+        <textarea class="textarea" name="addrr" id="addrr" value="请在此处填写你的装修要求" onfocus="if(this.innerHTML == '请在此处填写你的装修要求'){this.innerHTML = ''}" onblur="if(this.innerHTML == ''){this.innerHTML = '请在此处填写你的装修要求'}">请在此处填写你的装修要求</textarea>
+    </div>
+    <div class="table check"><input type="text" class="input-text fl" name="sys_check" id="sys_check" value="输入验证码" onfocus="if (value =='输入验证码'){value =''}" onblur="if (value ==''){value='输入验证码'}" /><img id="vdimgck" align="absmiddle" onClick="this.src=this.src+'?'" style="cursor: pointer;" alt="看不清？点击更换" src="../include/vdimgck.php"/>	</div>
+    <div class="table phone">
+    	<input type="text" class="input-text" name="phone" id="phone" value="请输入手机号" onfocus="if(value == '请输入手机号'){value = ''}" onblur="if(value == ''){value = '请输入手机号'}" />
+		<input type="submit" class="button" id="_phpok_submit" value=" "/>
+    </div>
+	<input name="dede_fields" value="contact,text;addr,text;cost,text;area,text;dtime,text;addrr,multitext;phone,text" type="hidden"/>
+<input name="dede_fieldshash" value="518dcf7a6e835f1fbc16021270d931e9" type="hidden"/>
+</form>
+</div>
+    
+    <div class="iThink fl">
+    	<div class="pTitle">
+		{dede:type typeid='22'}<a href="[field:typelink /]" target="_blank"  class="iMore">MORE</a>{/dede:type}
+            <em>客户感言</em><i>Testimonials</i>
+        </div>
+		{dede:arclist row='1' titlelen='40' flag = 'p' orderby='pubdate' typeid='22'}
+<a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="img fl"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+		{/dede:arclist}
+        
+        <ul>
+				{dede:arclist row='5' titlelen='40' orderby='pubdate' typeid='22'}
+<li><a href="[field:arcurl/]" title="[field:title/]" target="_blank">[field:title/]</a></li>
+		{/dede:arclist}
+</ul>
+    </div>
+    
+</div><!--//iWrap End-->
+
+<div class="Column-100 iNewsBg">
+	<div class="iWrap">
+    	<div class="iNews lArea fl">
+        	<div class="ht fl">{dede:type typeid='28'}<a href="[field:typelink /]" target="_blank"  class="iMore">MORE</a>{/dede:type}<em class="fyahei">公司动态</em></div>
+			{dede:arclist row='1' titlelen='40' flag = 'p' orderby='pubdate' typeid='28'}
+<div class="img fl"><a href="[field:arcurl/]" title="[field:title/]" target="_blank"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+            </div>
+		{/dede:arclist}
+            <ul class="fl">
+			{dede:arclist row='5' titlelen='40' orderby='pubdate' typeid='28'}
+<li><a href="[field:arcurl/]" title="[field:title/]" target="_blank"><i class="fr">[field:pubdate function="MyDate('Y-m-d',@me)"/]</i>[field:title/]</a></li>
+		{/dede:arclist}
+
+</ul>
+        </div>
+    	<div class="iNews fr">
+        	<div class="ht fl">{dede:type typeid='30'}<a href="[field:typelink /]" target="_blank"  class="iMore">MORE</a>{/dede:type}<em class="fyahei">装修课堂</em></div>
+      {dede:arclist row='1' titlelen='40' flag = 'p' orderby='pubdate' typeid='30'}
+<div class="img fl"><a href="[field:arcurl/]" title="[field:title/]" target="_blank"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+            </div>
+		{/dede:arclist}
+            <ul class="fl">
+			{dede:arclist row='5' titlelen='40' orderby='pubdate' typeid='30'}
+			<li><a href="[field:arcurl/]" title="[field:title/]" target="_blank"><i class="fr">[field:pubdate function="MyDate('Y-m-d',@me)"/]</i>[field:title/]</a></li>
+			{/dede:arclist}
+           </ul>
+        </div>
+    </div>
+</div><!--//iNewsBg End-->
+<style>
+ .frlink li{float:left;margin:0px 6px;}
+</style>
+<div class="iWrap iLink frlink">
+	<span class="fb" style="float:left;">友情链接:</span>
+	{dede:flink row='50'/}
+    </div>
+<script type="text/javascript" language="javascript" src="{dede:global.cfg_templets_skin/}/js/index.js"></script>
+<script type="text/javascript" src="{dede:global.cfg_templets_skin/}/js/swfobject.js"></script>
+
+{dede:include filename="footer.htm"/}

@@ -1,0 +1,1 @@
+<a href="[field:typelink /]" target="_blank"  class="iMore">MORE</a>

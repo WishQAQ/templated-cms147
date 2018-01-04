@@ -1,0 +1,81 @@
+{dede:include filename="head.htm"/}
+<div class="topBg"></div><div class="Column">
+        <div class="tc topImg"><img src="{dede:global.cfg_templets_skin/}/images/b609e7feda606bad.jpg" border="0" width="1000" alt="{dede:global.cfg_webname/}"/></div>
+        <div class="Leader">
+    <em>当前位置：</em>{dede:field name='position'/}{dede:field.title/}</div>
+</div><div class="Column">
+<div class="Column-L">
+	<div class="CateList fl">
+  <div class="ht fl"><span class="fheiti">装修案例</span><i>CASES</i></div>
+  <ul class="fl">
+        {dede:channel type='son' typeid='32' row='3'}
+			<li><a href="[field:typelink/]"  target="_blank">[field:typename/]</a></li>
+	    {/dede:channel}
+    </ul>
+</div>
+    <div class="pTop pCTop">
+    <div class="ht fl">案例排行榜</div>
+    <ul class="fl">
+	{dede:list row='10' titlelen='24' orderby='pubdate' typeid='32' currentstyle="<li class='hover'><em class="otaho fr">'~click~'&nbsp;&nbsp;</em>
+            <a href='~typelink~' title='~typename~' target="_blank" class="dis fl"><i class="otaho">[field:autoindex runphp='yes']@me=$GLOBALS['autoindex'];[/field:autoindex]</i>~typename~</a>
+            <a href='~typelink~' title='~typename~' target="_blank" class="imga"><img src="[field:litpic/]" alt='~typename~' /></a></li>"}
+	<!---->
+	
+	<!---->
+			     <li>
+            <em class="otaho fr">[field:click/]&nbsp;&nbsp;</em>
+            <a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="dis fl"><i class="otaho">[field:autoindex runphp='yes']@me=$GLOBALS['autoindex'];[/field:autoindex]</i>[field:title/]</a>
+            <a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="imga"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+        </li>
+			{/dede:list}
+     
+
+                </ul>
+</div>    <div class="pService lService fl">
+<a href="{dede:type typeid='24'}[field:typelink/]{/dede:type}" title="在线订单" target="_blank" class="icon indent"><span class="s1"></span><span class="s2"></span>在线订单</a>
+<a href="{dede:type typeid='62'}[field:typelink/]{/dede:type}" title="工地参观" target="_blank" class="icon visit"><span class="s1"></span><span class="s2"></span>工地参观</a>
+</div>    <div class="pTags fl f66">
+    <dl>
+        <dt>风格</dt>
+        <dd>
+		 {dede:channel type='son' row='5' typeid='46'}
+      	<a href="[field:typelink/]" title="[field:title/]" rel="nofollow">[field:typename/]</a>
+      	{/dede:channel}
+            
+                </dd>
+    </dl>
+    <dl>
+        <dt>户型</dt>
+        <dd>
+		 {dede:channel type='son' row='9' typeid='52'}
+      	<a href="[field:typelink/]" title="[field:title/]" rel="nofollow">[field:typename/]</a>
+      	{/dede:channel}
+             
+                </dd>
+    </dl>
+    </div></div>
+
+<div class="Column-R">
+	<div class="bTitle"><h1 class="fheiti">装修案例</h1></div>
+        <ul class="pCases CasesList">
+		{dede:list row='15' titlelen='24' orderby='pubdate'}
+			    <li id=[field:global name=autoindex function="@me%3==0?@me='end':@me=''"/]>
+            <a href="[field:arcurl/]" title="[field:title/]" class="imga"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+            <div class="txt">
+                <a href="[field:arcurl/]" title="[field:title/]" class="tt dis">[field:title/]</a>
+                <em class="fari fr">[field:click/]</em>
+				<em>设计：[field:dsnname/]</em>
+                             </div>
+            <div class="date fari">
+                <a href="[field:arcurl/]" title="[field:title/]" class="dis f99">+ READ MORE</a>
+                <em class="fr">[field:click/]</em>
+                <em>DATE:[field:pubdate function="MyDate('Y-m-d',@me)"/]</em>
+            </div>
+        </li>
+			{/dede:list}
+            </ul>
+    <div class="pagelist clearfix">
+{dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="15"/}</div>
+    </div>
+</div><!--//Column End-->
+{dede:include filename="footer.htm"/}

@@ -1,0 +1,1 @@
+INSERT INTO `dede_diybook` VALUES('4','0','','1231','男','18905602356','测试');

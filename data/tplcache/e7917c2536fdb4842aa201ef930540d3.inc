@@ -1,0 +1,1 @@
+<li  class={field:global name=autoindex function="@me%4==0?@me='end':@me=''"

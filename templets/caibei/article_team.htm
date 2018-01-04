@@ -1,0 +1,107 @@
+{dede:include filename="head.htm"/}
+<div class="topBg"></div><div class="Column">
+        <div class="tc topImg"><img src="{dede:global.cfg_templets_skin/}/images/a00a9660d245f33b.jpg" border="0" width="1000" alt="{dede:global.cfg_webname/}"></div>
+        <div class="Leader">
+    <em>当前位置：</em>{dede:field name='position'/}{dede:field.title/}</div>
+</div><div class="Column">
+<div class="Column-L">
+    <div class="CateList fl">
+      <div class="ht fl"><span class="fheiti">你还可以选择他们</span><i>MORE CHOOSES</i></div>
+    </div>
+	    <ul class="moreTeam fl">
+
+		
+		{dede:sql sql="select * from dede_adddesigner order by aid desc limit 0,4"}
+		<li>
+            <a href="/plus/view.php?aid=[field:aid]" title="[field:title/]" target="_blank" class="imga"><img src="[field:photo/]" alt="[field:title/]"/></a>
+            <div class="info">
+                <a href="[field:arcurl/]" title="[field:name/]" target="_blank" class="fyahei">[field:name/]</a>
+                <p class="position">[[field:job/]]</p>
+                <p>工作经验：[field:experience/]</p>                <p>收费标准：[field:collectfees/]</p>            </div>
+        </li>
+		{/dede:sql}
+      	</ul>
+	   
+</div>
+
+<div class="Column-R">
+	<div class="bTitle">
+		    <div class="msgPN">
+             
+        	<a>{dede:prenext get='pre'/}</a><br/>
+			<a>{dede:prenext get='next'/}</a>
+             
+             
+        </div>
+		        <h1 class="fheiti">{dede:field.title/}</h1>
+    </div>
+    <div class="msgInfo">
+        <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare fr"><span class="fl">分享到&nbsp;</span><a class="bds_tsina"></a><a class="bds_sqq"></a><a class="bds_qzone"></a><a class="bds_tqq"></a><a class="bds_renren"></a><span class="bds_more">更多</span></div>
+        <em>时间：{dede:field.pubdate function="MyDate('Y-m-d',@me)"/}</em>
+        <em>访问：<script src="{dede:field name='phpurl'/}/count.php?view=yes&aid={dede:field name='id'/}&mid={dede:field name='mid'/}" type='text/javascript' language="javascript"></script>次</em>
+    </div>
+    <div class="teamInfo fl">
+    	<div class="lArea fl"><img src="{dede:field.photo/}" alt="{dede:field.title/}" /></div>
+        <div class="mArea fl">
+            <p class="name fyahei">{dede:field.name/}</p>
+            <p><span class="fb">担任职务：</span>{dede:field.job/}</p>
+            <p><span class="fb">工作经验：</span>{dede:field.experience/}</p>            <p><span class="fb">擅长风格：</span>{dede:field.goodstyle/}</p>            <p><span class="fb">收费标准：</span>{dede:field.collectfees/}</p>            <p><span class="fb">人气指数：</span>{dede:field.click/}</p>
+        </div>
+        <div class="rArea fl">
+            <script type='text/javascript' language="javascript">
+			var designer='{dede:field.dsnname/}';
+			var cmsurl='{dede:global.cfg_basehost/}';
+			designer = escape(designer);
+			document.write('<a href="'+cmsurl+'/plus/list.php?tid=24&designer={dede:field.dsnname/}" title="立即预约这位设计师" target="_blank" class="trust">');
+			</script>
+			<span class="orange"><script src="{dede:field name='phpurl'/}/countapply.php?designer={dede:field name='dsnname'/}" type='text/javascript' language="javascript"></script></span></a>
+            <p class="tel"></p>
+        </div>    
+    </div>
+    <div class="hr20"></div>
+    <div class="teamContent fl">
+                <div class="ht"><span>个人简介</span></div>
+        <pre class="pre">{dede:field.introduction/}</pre>
+                        <div class="ht"><span>主要作品</span></div>
+        <pre class="pre">{dede:field.production/}</pre>
+                        <div class="ht"><span>设计理念</span></div>
+        <pre class="pre">{dede:field.designconcept/}</pre>
+            </div>
+    <div class="ifLike fl">
+    	<span class="fyahei">如果你喜欢TA的设计,你可以</span>
+		<script type='text/javascript' language="javascript">
+			var designer='{dede:field.dsnname/}';
+			var cmsurl='{dede:global.cfg_basehost/}';
+			designer = escape(designer);
+			document.write('<a href="'+cmsurl+'/plus/list.php?tid=24&designer='+designer+'" title="立即预约这位设计师" target="_blank" class="team_btn order">立即预约</a>');
+		</script>
+		<a href="{dede:type typeid='25'}[field:typelink/]{/dede:type}" title="立即咨询" target="_blank" class="team_btn book">立即咨询</a>
+    </div>
+            <div class="pTitle" style="margin-bottom:0;"><em>全部案例</em><i>CASES</i></div>
+    <ul class="pCases CasesList">
+        {dede:sql sql="select * from dede_addjingxuananli a left join dede_archives b on a.aid=b.id where a.dsnname=~dsnname~ limit 0,6"}
+		  <li id=[field:global name=autoindex function="@me%3==0?@me='end':@me=''"/]>
+            <a href="[field:arcurl/]" title="[field:title/]" class="imga"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+            <div class="txt">
+                <a href="[field:arcurl/]" title="[field:title/]" class="tt dis">[field:title/]</a>
+                <em class="fari fr">[field:click/]</em>
+                            <em>设计：[field:dsnname/]</em>
+                            </div>
+            <div class="date fari">
+                <a href="[field:arcurl/]" title="[field:title/]" class="dis f99">+ READ MORE</a>
+                <em class="fr">[field:click/]</em>
+                <em>DATE:[field:pubdate function="MyDate('Y-m-d',@me)"/]</em>
+            </div>
+        </li>
+			{/dede:sql}
+    	      
+            </ul>
+    	    <div class="hr20"></div>
+</div>
+</div><!--//Column End-->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1384883" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+{dede:include filename="footer.htm"/}

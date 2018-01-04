@@ -1,0 +1,42 @@
+<?php
+$z[0]=Array("include","",0,36);
+$z[0][4]['filename']="head2.htm";
+$z[1]=Array("global","",126,158);
+$z[1][4]['name']="cfg_templets_skin";
+$z[2]=Array("global","",217,243);
+$z[2][4]['name']="cfg_webname";
+$z[3]=Array("field","",311,340);
+$z[3][4]['name']="position";
+$z[4]=Array("field","",340,359);
+$z[4][4]['name']="title";
+$z[5]=Array("channel","\r\n      	  <li><a href=\"[field:typelink/]\"  target=\"_blank\">[field:typename/]</a></li>\r\n      	",549,786);
+$z[5][4]['type']="son";
+$z[5][4]['row']="7";
+$z[5][4]['typeid']="11";
+$z[5][4]['currentstyle']="<li class='current'><a href='~typelink~' ~rel~>~typename~</a></li>";
+$z[6]=Array("global","",886,911);
+$z[6][4]['name']="cfg_cmsurl";
+$z[7]=Array("global","",1064,1089);
+$z[7][4]['name']="cfg_cmsurl";
+$z[8]=Array("prenext","",1358,1384);
+$z[8][4]['get']="next";
+$z[9]=Array("field","",1444,1463);
+$z[9][4]['name']="title";
+$z[10]=Array("field","",1810,1862);
+$z[10][4]['name']="pubdate";
+$z[10][4]['function']="MyDate('Y-m-d',@me)";
+$z[11]=Array("field","",1890,1909);
+$z[11][4]['name']="click";
+$z[12]=Array("field","",2003,2021);
+$z[12][4]['name']="body";
+$z[13]=Array("arclist","	\r\n             <li id=[field:global name=autoindex function=\"@me%3==0?@me='end':@me=''\"/]>\r\n        <a href=\"[field:arcurl/]\" title=\"[field:title/]\" target=\"_blank\" class=\"img\"><img src=\"[field:litpic/]\" alt=\"[field:title/]\" />\r\n        <p class=\"dis\">[field:title/]</p></a>\r\n        </li>\r\n			",2156,2532);
+$z[13][4]['row']="3";
+$z[13][4]['titlelen']="24";
+$z[13][4]['orderby']="pubdate";
+$z[13][4]['typeid']="14";
+$z[14]=Array("global","",2960,2992);
+$z[14][4]['name']="cfg_templets_skin";
+$z[15]=Array("include","",3406,3443);
+$z[15][4]['filename']="footer.htm";
+
+?>

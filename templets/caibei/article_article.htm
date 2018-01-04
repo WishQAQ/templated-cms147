@@ -1,0 +1,75 @@
+{dede:include filename="head.htm"/}
+<div class="topBg"></div><div class="Column">
+        <div class="tc topImg"><img src="{dede:global.cfg_templets_skin/}/images/da0924e9e7c1c35c.jpg" border="0" width="1000" alt="{dede:global.cfg_webname/}"/></div>
+        <div class="Leader">
+    <em>当前位置：</em>{dede:field name='position'/}{dede:field.title/}</div>
+</div><div class="Column">
+<div class="Column-L">
+	<div class="CateList fl">
+  <div class="ht fl"><span class="fheiti">资讯中心</span><i>NEWS</i></div>
+  <ul class="fl">
+ {dede:channel type='son' typeid='2' row='4'}
+			<li><a href="[field:typelink/]"  target="_blank">[field:typename/]</a></li>
+	    {/dede:channel}
+    </ul>
+</div>
+    <div class="pTop pSTop">
+    <div class="ht fl">热点活动</div>
+    <ul class="fl">
+	{dede:arclist row='5' titlelen='40' orderby='pubdate' typeid='45' currentstyle="<li class='hover'><a href='~typelink~' ~rel~><span>~typename~</span></a></li>"}
+			    <li>
+            <a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="imga"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+            <a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="dis fl"><i class="orange">&nbsp;· </i>[field:title/]</a>
+        </li>
+			{/dede:arclist}
+                </ul>
+</div>    <div class="pService lService fl">
+<a href="{dede:type typeid='24'}[field:typelink/]{/dede:type}" title="在线订单" target="_blank" class="icon indent"><span class="s1"></span><span class="s2"></span>在线订单</a>
+<a href="{dede:type typeid='62'}[field:typelink/]{/dede:type}" title="工地参观" target="_blank" class="icon visit"><span class="s1"></span><span class="s2"></span>工地参观</a>
+</div></div>
+
+<div class="Column-R">
+	<div class="bTitle">
+		    	<div class="msgPN">
+             
+             
+        	<a class="next">{dede:prenext get='next'/}</a>
+             
+        </div>
+		        <h1 class="fheiti">{dede:field.title/}</h1>
+    </div>
+    <div class="msgInfo">
+        <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare fr"><span class="fl">分享到&nbsp;</span><a class="bds_tsina"></a><a class="bds_sqq"></a><a class="bds_qzone"></a><a class="bds_tqq"></a><a class="bds_renren"></a><span class="bds_more">更多</span></div>
+        <em>时间：{dede:field.pubdate function="MyDate('Y-m-d',@me)"/}</em>
+        <em>访问：{dede:field.click/}次</em>
+    </div>
+	<div class="newsContent">
+	{dede:field.body/}
+</div>
+            <div class="newsKW fl">
+        <span class="fb">关键词</span>{dede:field.keywords/}</div>
+            <div class="hr20"></div>
+        <div class="pTitle"><em>更多资讯</em><i>MORE</i></div>
+	<ul class="moreNews fl">
+	{dede:arclist row='1' titlelen='24' orderby='pubdate' typeid='2'}
+			     <li>
+        <a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="imga fl"><img src="[field:litpic/]" alt="[field:title/]" /></a>        <em class="fr">2014/06/17</em>
+        <a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="tt">·[field:title/]</a>
+        </li>
+			{/dede:arclist}
+		   {dede:arclist row='4' titlelen='60' orderby='pubdate' typeid='2'}
+			      <li>
+                <em class="fr">[field:pubdate function="MyDate('Y-m-d',@me)"/]</em>
+        <a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="tt">·[field:title/]</a>
+        </li>
+			{/dede:arclist}
+		   
+			</ul>
+	</div>
+</div><!--//Column End-->
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1384883" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000);
+</script>
+{dede:include filename="footer.htm"/}

@@ -1,0 +1,1 @@
+<td height="120" width="100" align="center" style="padding:0px 10px;"> <a href="[field:arcurl/]" target="_blank"><img height="120" width="100" src="[field:litpic/]"/><br/>[field:title/]</a></td>

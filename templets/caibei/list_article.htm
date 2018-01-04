@@ -1,0 +1,47 @@
+{dede:include filename="head.htm"/}
+<div class="topBg"></div><div class="Column">
+        <div class="tc topImg"><img src="{dede:global.cfg_templets_skin/}/images/da0924e9e7c1c35c.jpg" border="0" width="1000" alt="{dede:global.cfg_webname/}"></div>
+        <div class="Leader">
+    <em>当前位置：</em>{dede:field name='position'/}{dede:field.title/}</div>
+</div><div class="Column">
+<div class="Column-L">
+	<div class="CateList fl">
+  <div class="ht fl"><span class="fheiti">资讯中心</span><i>NEWS</i></div>
+  <ul class="fl">
+  {dede:channel type='son' typeid='2' row='4'}
+			<li><a href="[field:typelink/]"  target="_blank">[field:typename/]</a></li>
+	    {/dede:channel}
+   
+    </ul>
+</div>
+    <div class="pTop pSTop">
+    <div class="ht fl">热点活动</div>
+    <ul class="fl">
+	{dede:arclist row='5' titlelen='40' orderby='pubdate' typeid='45' currentstyle="<li class='hover'><a href='~typelink~' ~rel~><span>~typename~</span></a></li>"}
+			    <li>
+            <a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="imga"><img src="[field:litpic/]" alt="[field:title/]" /></a>
+            <a href="[field:arcurl/]" title="[field:title/]" target="_blank" class="dis fl"><i class="orange">&nbsp;· </i>[field:title/]</a>
+        </li>
+			{/dede:arclist}
+
+                </ul>
+</div>    <div class="pService lService fl">
+<a href="{dede:type typeid='24'}[field:typelink/]{/dede:type}" title="在线订单" target="_blank" class="icon indent"><span class="s1"></span><span class="s2"></span>在线订单</a>
+<a href="{dede:type typeid='62'}[field:typelink/]{/dede:type}" title="工地参观" target="_blank" class="icon visit"><span class="s1"></span><span class="s2"></span>工地参观</a>
+</div></div>
+
+<div class="Column-R">
+	<div class="bTitle"><h1 class="fheiti">资讯中心</h1></div>
+        <ul class="NewsList fl">
+		{dede:list row='20' titlelen='80' orderby='pubdate' typeid='2' type='image.'}
+		   <li>
+		<em class="fr">[field:pubdate function="MyDate('Y-m-d',@me)"/]</em>
+		<a href="[field:arcurl/]" title="[field:title/]" class="fl">·[field:title/]</a>
+        </li>
+		{/dede:list}
+            </ul>
+    <div class="pagelist clearfix">
+{dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="20"/}</div>
+    </div>
+</div><!--//Column End-->
+{dede:include filename="footer.htm"/}
